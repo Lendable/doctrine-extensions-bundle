@@ -28,7 +28,7 @@ class RepositoryFactory implements RepositoryFactoryInterface
      * The repository factory to fallback to if the entity is not configured
      * as a service.
      *
-     * @var RepositoryFactory
+     * @var RepositoryFactoryInterface
      */
     private $fallback;
 
