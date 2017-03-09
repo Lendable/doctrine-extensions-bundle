@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/Lendable/doctrine-extensions-bundle/badge.svg?branch=travis-ci)](https://coveralls.io/github/Lendable/doctrine-extensions-bundle?branch=travis-ci)
 [![Total Downloads](https://poser.pugx.org/lendable/doctrine-extensions-bundle/d/total.png)](https://packagist.org/packages/lendable/doctrine-extensions-bundle)
 
-and licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE).
 
 Provides extensions to how Doctrine is integrated with Symfony. This includes:
 
