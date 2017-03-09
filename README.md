@@ -46,7 +46,7 @@ A repository with extra constructor arguments such as:
 <?php
 // src/App/Entity/Repository/ExampleRepository.php
 
-namespace App\Entity\Repository\ExampleRepository;
+namespace App\Entity\Repository;
 
 class ExampleRepository extends EntityRepository
 {
