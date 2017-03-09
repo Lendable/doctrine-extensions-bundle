@@ -1,0 +1,8 @@
+Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Bundles\FooBundle\Entity\WithoutCustomRepository:
+    type: entity
+    readOnly: true
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO

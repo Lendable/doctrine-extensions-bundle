@@ -1,0 +1,30 @@
+{
+  "name": "lendable/doctrine-extensions-bundle",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Lendable\\DoctrineExtensionsBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Lendable\\DoctrineExtensionsBundle\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Lendable Ltd"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "doctrine/doctrine-bundle": "^1.6",
+    "roave/security-advisories": "dev-master",
+    "doctrine/orm": "^2.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0",
+    "symfony/yaml": "^3.2",
+    "satooshi/php-coveralls": "^1.0"
+  }
+}

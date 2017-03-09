@@ -1,0 +1,9 @@
+Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Bundles\BarBundle\Entity\WithCustomRepository:
+    type: entity
+    readOnly: true
+    repositoryClass: Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Bundles\BarBundle\Entity\Repository\CustomRepositoryWithCustomArgs
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
