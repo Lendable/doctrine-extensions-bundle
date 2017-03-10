@@ -19,13 +19,13 @@
   "require": {
     "php": "^7.0",
     "doctrine/doctrine-bundle": "^1.6",
-    "roave/security-advisories": "dev-master",
     "doctrine/orm": "^2.5",
     "ext-mbstring": "^7.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.0",
     "symfony/yaml": "^3.2",
-    "satooshi/php-coveralls": "^1.0"
+    "satooshi/php-coveralls": "^1.0",
+    "roave/security-advisories": "dev-master"
   }
 }
