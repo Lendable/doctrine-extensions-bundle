@@ -1,6 +1,6 @@
 # Lendable Doctrine Extensions Bundle
 
-[![Build Status](https://secure.travis-ci.org/Lendable/doctrine-extensions-bundle.png)](http://travis-ci.org/Lendable/doctrine-extensions-bundle)
+[![Build Status](https://travis-ci.org/Lendable/doctrine-extensions-bundle.svg?branch=master)](https://travis-ci.org/Lendable/doctrine-extensions-bundle)
 [![Coverage Status](https://coveralls.io/repos/github/Lendable/doctrine-extensions-bundle/badge.svg?branch=travis-ci)](https://coveralls.io/github/Lendable/doctrine-extensions-bundle?branch=travis-ci)
 [![Total Downloads](https://poser.pugx.org/lendable/doctrine-extensions-bundle/d/total.png)](https://packagist.org/packages/lendable/doctrine-extensions-bundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Lendable/doctrine-extensions-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Lendable/doctrine-extensions-bundle/?branch=master)
