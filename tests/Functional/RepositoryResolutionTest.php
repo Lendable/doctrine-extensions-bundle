@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityRepository;
 use Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Bundles\BarBundle\Entity\Repository\CustomRepositoryWithCustomArgs;
 use Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Bundles\BarBundle\Entity\WithCustomRepository;
 use Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Bundles\FooBundle\Entity\WithoutCustomRepository;
+use Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Service\CustomService;
 use Lendable\DoctrineExtensionsBundle\Tests\TestCase;
 
 class RepositoryResolutionTest extends TestCase
@@ -34,6 +35,14 @@ class RepositoryResolutionTest extends TestCase
 
         self::assertSame('foo', $repository->getCustomScalar());
         self::assertSame('custom_parameter_value', $repository->getCustomParameter());
+        self::assertInstanceOf(CustomService::class, $repository->getCustomService());
+        self::assertCount(3, $repository->getCustomArray());
+        self::assertArrayHasKey('key1', $repository->getCustomArray());
+        self::assertSame('bar', $repository->getCustomArray()['key1']);
+        self::assertArrayHasKey('key2', $repository->getCustomArray());
+        self::assertSame('custom_parameter_value', $repository->getCustomArray()['key2']);
+        self::assertArrayHasKey('key3', $repository->getCustomArray());
+        self::assertInstanceOf(CustomService::class, $repository->getCustomArray()['key3']);
 
         $repository = $doctrineRegistry->getRepository(WithoutCustomRepository::class);
 

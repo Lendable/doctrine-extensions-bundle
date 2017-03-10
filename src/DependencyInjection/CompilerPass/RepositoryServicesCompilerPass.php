@@ -128,6 +128,14 @@ class RepositoryServicesCompilerPass implements CompilerPassInterface
     {
         if (is_string($configValue) && $configValue[0] === '@') {
             return new Reference(mb_substr($configValue, 1));
+        } elseif (is_array($configValue)) {
+            $value = [];
+
+            foreach ($configValue as $key => $configElement) {
+                $value[$key] = $this->createArgument($configElement);
+            }
+
+            return $value;
         } else {
             return $configValue;
         }

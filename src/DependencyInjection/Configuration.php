@@ -31,7 +31,7 @@ class Configuration implements ConfigurationInterface
         $repositories->children()
             ->arrayNode('args')
             ->isRequired()
-            ->prototype('scalar');
+            ->prototype('variable');
 
         $repositories->children()
             ->arrayNode('managers')

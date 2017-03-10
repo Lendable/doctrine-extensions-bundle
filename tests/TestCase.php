@@ -90,6 +90,11 @@ class TestCase extends \PHPUnit\Framework\TestCase
                                 'foo',
                                 '%custom_parameter%',
                                 '@custom_service',
+                                [
+                                    'key1' => 'bar',
+                                    'key2' => '%custom_parameter%',
+                                    'key3' => '@custom_service',
+                                ],
                             ],
                         ],
                     ],

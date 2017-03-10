@@ -26,12 +26,18 @@ class CustomRepositoryWithCustomArgs extends EntityRepository
      */
     private $customParameter;
 
-    public function __construct(EntityManager $em, Mapping\ClassMetadata $class, string $customScalar, string $customParameter, CustomService $customService)
+    /**
+     * @var array
+     */
+    private $customArray;
+
+    public function __construct(EntityManager $em, Mapping\ClassMetadata $class, string $customScalar, string $customParameter, CustomService $customService, array $customArray)
     {
         parent::__construct($em, $class);
         $this->customScalar = $customScalar;
         $this->customParameter = $customParameter;
         $this->customService = $customService;
+        $this->customArray = $customArray;
     }
 
     /**
@@ -56,5 +62,13 @@ class CustomRepositoryWithCustomArgs extends EntityRepository
     public function getCustomService(): CustomService
     {
         return $this->customService;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCustomArray(): array
+    {
+        return $this->customArray;
     }
 }
