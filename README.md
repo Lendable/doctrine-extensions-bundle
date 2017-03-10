@@ -60,13 +60,15 @@ class ExampleRepository extends EntityRepository
         ClassMetadata $classMetadata,
         string $customRawValue,
         string $customParameter, 
-        CustomService $customService) 
+        CustomService $customService,
+        array $customArray) 
     {
         parent::__construct($entityManager, $classMetadata);
         
         $this->customRawValue = $customRawValue;
         $this->customParameter = $customParameter;
         $this->customService = $customService;
+        $this->customArray = $customArray;
     }
 }
 ```
@@ -84,13 +86,17 @@ lendable_doctrine_extensions:
                 - 'a literal raw value'
                 - '%custom_parameter%'
                 - '@custom_service'
+                - 
+                    config: '@config_service'
+                    raw_value: 'a literal raw value'
 ```
 
 An argument can either be:
 
-* Raw value (including an array).
+* Raw scalar.
 * Parameter reference (`%wrapped%`).
 * Service reference (`@prefixed`).
+* An indexed/associative array of any of the above.
 
 The repository can now be retrieved as usual via the Doctrine `Registry` or `EntityManager`.
 
