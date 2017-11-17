@@ -12,7 +12,6 @@ use Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Bundles\BarBundle\Entity\Re
 use Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Bundles\BarBundle\Entity\WithCustomRepository;
 use Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Bundles\FooBundle\FooBundle;
 use Lendable\DoctrineExtensionsBundle\Tests\Fixtures\Service\CustomService;
-use Symfony\Component\DependencyInjection\Compiler\ResolveDefinitionTemplatesPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Definition;
@@ -105,7 +104,6 @@ class TestCase extends \PHPUnit\Framework\TestCase
         );
 
         $container->getCompilerPassConfig()->setBeforeOptimizationPasses([new RepositoryServicesCompilerPass()]);
-        $container->getCompilerPassConfig()->setOptimizationPasses([new ResolveDefinitionTemplatesPass()]);
 
         $container->setParameter('custom_parameter', 'custom_parameter_value');
         $container->setDefinition('custom_service', new Definition(CustomService::class));
