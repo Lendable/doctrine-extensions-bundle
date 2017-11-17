@@ -26,6 +26,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
             new ParameterBag(
                 [
                     'kernel.debug' => true,
+                    'kernel.name' => 'tests',
                     'kernel.bundles' => [
                         'FooBundle' => FooBundle::class,
                         'BarBundle' => BarBundle::class,
