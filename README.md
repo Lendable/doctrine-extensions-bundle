@@ -15,7 +15,7 @@ scenes retrieval / instantiation via the container.
 ## Requirements
 
 * PHP >= 7.0
-* symfony/symfony >= 3.0 
+* symfony/symfony >= 3.2|4.0
 
 ## Installation
 

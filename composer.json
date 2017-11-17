@@ -1,6 +1,14 @@
 {
   "name": "lendable/doctrine-extensions-bundle",
   "type": "library",
+  "license": "MIT",
+  "keywords": ["doctrine", "symfony", "bundle", "lendable"],
+  "authors": [
+    {
+      "name": "Lendable Ltd",
+      "email": "dev@lendable.co.uk"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Lendable\\DoctrineExtensionsBundle\\": "src/"
@@ -11,11 +19,6 @@
       "Lendable\\DoctrineExtensionsBundle\\Tests\\": "tests/"
     }
   },
-  "authors": [
-    {
-      "name": "Lendable Ltd"
-    }
-  ],
   "require": {
     "php": "^7.0",
     "doctrine/doctrine-bundle": "^1.6",
