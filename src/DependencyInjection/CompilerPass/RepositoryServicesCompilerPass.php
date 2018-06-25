@@ -128,7 +128,8 @@ class RepositoryServicesCompilerPass implements CompilerPassInterface
     {
         if (is_string($configValue) && $configValue[0] === '@') {
             return new Reference(mb_substr($configValue, 1));
-        } elseif (is_array($configValue)) {
+        }
+        if (is_array($configValue)) {
             $value = [];
 
             foreach ($configValue as $key => $configElement) {
@@ -136,8 +137,8 @@ class RepositoryServicesCompilerPass implements CompilerPassInterface
             }
 
             return $value;
-        } else {
-            return $configValue;
         }
+
+        return $configValue;
     }
 }

@@ -45,8 +45,8 @@ class RepositoryFactory implements RepositoryFactoryInterface
 
         if (isset($this->fqcnToServiceIdMap[$className])) {
             return $this->container->get($this->fqcnToServiceIdMap[$className]);
-        } else {
-            return $this->fallback->getRepository($entityManager, $entityName);
         }
+
+        return $this->fallback->getRepository($entityManager, $entityName);
     }
 }

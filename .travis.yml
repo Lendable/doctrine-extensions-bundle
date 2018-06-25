@@ -6,12 +6,32 @@ cache:
   directories:
     - $HOME/.composer/cache
 
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+  - nightly
+  - hhvm
+
+env:
+  - SYMFONY_VERSION=2.7.*
+  - SYMFONY_VERSION=2.8.*
+  - SYMFONY_VERSION=3.0.*
+  - SYMFONY_VERSION=3.1.*
+  - SYMFONY_VERSION=3.2.*
+  - SYMFONY_VERSION=3.3.*
+  - SYMFONY_VERSION=3.4.*
+  - SYMFONY_VERSION=4.0.*
+  - SYMFONY_VERSION=4.1.*
+  - DEPENDENCIES="beta"
+
 matrix:
-  include:
+  fast_finish: true
+  exclude:
     - php: 7.0
-      env: SYMFONY_VERSION=3.2.*
+      env: SYMFONY_VERSION=4.0.*
     - php: 7.0
-      env: SYMFONY_VERSION=3.3.*
+      env: SYMFONY_VERSION=4.1.*
     - php: 7.0
       env: DEPENDENCIES=beta
     - php: 7.1
@@ -28,22 +48,24 @@ matrix:
       env: DEPENDENCIES=beta
   allow_failures:
     - php: nightly
-
-env:
-  global:
-    - deps=no
+    - php: hhvm
+    - env: DEPENDENCIES="beta"
 
 before_install:
-  - composer self-update
-  # Set composer minimum-stability configuration filter to beta versions
-  - if [ "$DEPENDENCIES" = "beta" ]; then perl -pi -e 's/^}$/,"minimum-stability":"beta"}/' composer.json; fi;
+  - composer install --no-interaction
+  - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
+  - mkdir -p build/logs
 
 install:
-  - if [ "$deps" = "no" ]; then composer update; fi;
-  - if [ "$deps" = "low" ]; then composer --prefer-lowest --prefer-stable update; fi;
+  - if [ "$DEPENDENCIES" = "beta" ]; then composer config minimum-stability beta; fi;
+  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --no-update symfony/symfony:${SYMFONY_VERSION}; fi
 
 script:
-  - ./vendor/bin/phpunit -v --coverage-clover ./build/logs/clover.xml
+  - composer validate-files
+  - composer check-code-style
+  - composer check-security
+  - composer run-tests-with-clover
 
 after_script:
-  - php ./vendor/bin/coveralls -v
+  - php bin/coveralls -v
