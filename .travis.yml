@@ -7,7 +7,7 @@ cache:
     - $HOME/.composer/cache
 
 php:
-  - 7.0.29
+  - 7.0
   - 7.1.18
   - 7.2
   - nightly
@@ -28,11 +28,11 @@ env:
 matrix:
   fast_finish: true
   exclude:
-    - php: 7.0.29
+    - php: 7.0
       env: SYMFONY_VERSION=4.0.*
-    - php: 7.0.29
+    - php: 7.0
       env: SYMFONY_VERSION=4.1.*
-    - php: 7.0.29
+    - php: 7.0
       env: DEPENDENCIES="beta"
     - php: 7.1.18
       env: SYMFONY_VERSION=3.2.*
@@ -60,7 +60,7 @@ install:
 script:
   - composer validate-files
   - composer check-code-style
-  - composer check-security
+  - if [ $(phpenv version-name) = 7.0 ]; then echo "Security check is skipped due to security-checker issue 100"; else composer check-security; fi;
   - composer run-tests-with-clover
 
 after_script:

@@ -41,10 +41,10 @@
       "bin/parallel-lint --exclude vendor --exclude bin ."
     ],
     "check-code-style": [
-      "bin/php-cs-fixer fix --config='./.php_cs' --show-progress=none --dry-run --no-interaction --diff -v"
+      "bin/php-cs-fixer fix --config='./.php_cs' --no-interaction --diff --dry-run -v"
     ],
     "fix-code-style": [
-      "bin/php-cs-fixer fix --config='./.php_cs' --show-progress=none --no-interaction --diff -v"
+      "bin/php-cs-fixer fix --config='./.php_cs' --no-interaction --diff -v"
     ],
     "run-tests": [
       "bin/phpunit"
