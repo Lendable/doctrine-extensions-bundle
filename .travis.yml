@@ -53,6 +53,7 @@ before_install:
 install:
   - if [ "$DEPENDENCIES" = "beta" ]; then composer config minimum-stability beta; fi;
   - if [ "$SYMFONY_VERSION" != "" ]; then composer require symfony/symfony:${SYMFONY_VERSION}; fi
+  - if [ "$SYMFONY_VERSION" != "4.1.*" ]; then composer remove friendsofphp/php-cs-fixer; fi
   - composer update -n --prefer-dist
 
 script:
