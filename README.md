@@ -81,7 +81,7 @@ lendable_doctrine_extensions:
     repositories:
         App\Entity\Repository\ExampleRepository:
             entity: App\Entity\Example
-            managers: [your_default_manager]
+            managers: ['default', 'custom_manager']
             args:
                 - 'a literal raw value'
                 - '%custom_parameter%'
