@@ -3,6 +3,7 @@
   "type": "symfony-bundle",
   "license": "MIT",
   "keywords": ["doctrine", "symfony", "bundle", "lendable"],
+  "description": "Provides extensions to how Doctrine is integrated with Symfony like enabling repositories to have extra constructor arguments and behind the scenes retrieval/instantiation via the container.",
   "authors": [
     {
       "name": "Lendable Ltd",
@@ -32,7 +33,8 @@
     "jakub-onderka/php-parallel-lint": "^1.0",
     "phpunit/phpunit": "^6.0",
     "php-coveralls/php-coveralls": "^2.1",
-    "sensiolabs/security-checker": "^4.1"
+    "sensiolabs/security-checker": "^4.1",
+    "symfony/symfony": "^2.7|^3.0|^4.0"
   },
 
   "scripts": {
