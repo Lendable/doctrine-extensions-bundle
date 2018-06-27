@@ -55,7 +55,7 @@ install:
   - if [ "$SYMFONY_VERSION" != "" ]; then
       composer remove symfony/symfony &&
       rm composer.lock &&
-      composer require symfony/symfony:${SYMFONY_VERSION} &&
+      composer require symfony/symfony:"${SYMFONY_VERSION}" &&
       rm composer.lock;
     fi
   - composer update -n --prefer-dist
@@ -71,7 +71,7 @@ script:
     else
       composer check-code-style;
     fi;
-  - if [ $(phpenv version-name) = 7.0 ]; then
+  - if [ "$(phpenv version-name)" = 7.0 ]; then
       echo "Security check is skipped due to security-checker issue 100";
     else
       composer check-security;
