@@ -49,14 +49,10 @@ install:
       composer config minimum-stability beta;
     fi;
   - if [ "$SYMFONY_VERSION" != "4.1.*" ]; then
-      composer remove friendsofphp/php-cs-fixer --dev &&
-      rm composer.lock;
+      composer remove friendsofphp/php-cs-fixer --dev;
     fi
   - if [ "$SYMFONY_VERSION" != "" ]; then
-      composer remove symfony/symfony --dev &&
-      rm composer.lock &&
-      composer require symfony/symfony:"${SYMFONY_VERSION}" --dev &&
-      rm composer.lock;
+      composer require symfony/symfony:"${SYMFONY_VERSION}" --dev --update-wtih-dependencies;
     fi
   - composer update -n --prefer-dist
 
