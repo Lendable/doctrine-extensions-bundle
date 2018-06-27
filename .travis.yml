@@ -52,7 +52,8 @@ install:
       composer remove friendsofphp/php-cs-fixer --dev;
     fi
   - if [ "$SYMFONY_VERSION" != "" ]; then
-      composer require symfony/symfony:"${SYMFONY_VERSION}" --dev --update-wtih-dependencies;
+      composer remove symfony/symfony --dev &&
+      composer require symfony/symfony:"${SYMFONY_VERSION}" --dev --no-update;
     fi
   - composer update -n --prefer-dist
 
