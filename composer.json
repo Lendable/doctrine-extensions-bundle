@@ -32,8 +32,7 @@
     "jakub-onderka/php-parallel-lint": "^1.0",
     "phpunit/phpunit": "^6.0",
     "php-coveralls/php-coveralls": "^2.1",
-    "sensiolabs/security-checker": "^4.1",
-    "symfony/symfony": "^2.7|^3.0|^4.0"
+    "sensiolabs/security-checker": "^4.1"
   },
 
   "scripts": {

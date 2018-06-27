@@ -53,9 +53,9 @@ install:
       rm composer.lock;
     fi
   - if [ "$SYMFONY_VERSION" != "" ]; then
-      composer remove symfony/symfony &&
+      composer remove symfony/symfony --dev &&
       rm composer.lock &&
-      composer require symfony/symfony:"${SYMFONY_VERSION}" &&
+      composer require symfony/symfony:"${SYMFONY_VERSION}" --dev &&
       rm composer.lock;
     fi
   - composer update -n --prefer-dist
