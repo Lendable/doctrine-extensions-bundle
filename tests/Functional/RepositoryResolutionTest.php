@@ -31,7 +31,7 @@ class RepositoryResolutionTest extends TestCase
         $repository = $doctrineRegistry->getRepository(WithCustomRepository::class);
 
         self::assertInstanceOf(CustomRepositoryWithCustomArgs::class, $repository);
-        /** @var CustomRepositoryWithCustomArgs $repository */
+        /* @var CustomRepositoryWithCustomArgs $repository */
 
         self::assertSame('foo', $repository->getCustomScalar());
         self::assertSame('custom_parameter_value', $repository->getCustomParameter());

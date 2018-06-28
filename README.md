@@ -1,7 +1,7 @@
 # Lendable Doctrine Extensions Bundle
 
 [![Build Status](https://travis-ci.org/Lendable/doctrine-extensions-bundle.svg?branch=master)](https://travis-ci.org/Lendable/doctrine-extensions-bundle)
-[![Coverage Status](https://coveralls.io/repos/github/Lendable/doctrine-extensions-bundle/badge.svg?branch=travis-ci)](https://coveralls.io/github/Lendable/doctrine-extensions-bundle?branch=travis-ci)
+[![Coverage Status](https://coveralls.io/repos/github/Lendable/doctrine-extensions-bundle/badge.svg?branch=master)](https://coveralls.io/github/Lendable/doctrine-extensions-bundle?branch=master)
 [![Total Downloads](https://poser.pugx.org/lendable/doctrine-extensions-bundle/d/total.png)](https://packagist.org/packages/lendable/doctrine-extensions-bundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Lendable/doctrine-extensions-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Lendable/doctrine-extensions-bundle/?branch=master)
 
@@ -15,7 +15,7 @@ scenes retrieval / instantiation via the container.
 ## Requirements
 
 * PHP >= 7.0
-* symfony/symfony >= 3.2|4.0
+* Symfony >= 2.7
 
 ## Installation
 
@@ -81,7 +81,7 @@ lendable_doctrine_extensions:
     repositories:
         App\Entity\Repository\ExampleRepository:
             entity: App\Entity\Example
-            managers: [default]
+            managers: ['default', 'custom_manager']
             args:
                 - 'a literal raw value'
                 - '%custom_parameter%'

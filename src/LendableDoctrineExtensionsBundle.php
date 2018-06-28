@@ -14,5 +14,4 @@ class LendableDoctrineExtensionsBundle extends Bundle
     {
         $container->addCompilerPass(new RepositoryServicesCompilerPass());
     }
-
 }
